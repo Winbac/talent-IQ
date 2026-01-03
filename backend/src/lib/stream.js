@@ -1,4 +1,3 @@
-import { err } from "inngest/types";
 import { StreamChat } from "stream-chat";
 import { ENV } from "./env.js";
 
