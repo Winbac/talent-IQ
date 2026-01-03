@@ -1,4 +1,4 @@
-import { err } from "inngest/types";
+import { ENV } from "./env.js";
 import { StreamChat } from "stream-chat";
 
 const apiKey = ENV.STREAM_API_KEY;
