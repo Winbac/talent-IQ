@@ -26,5 +26,3 @@ export const deleteStreamUser = async (userId) => {
     console.error("Error upserting Stream user:", error);
   }
 };
-
-// GERETAE TOKEN IN FUTURE
