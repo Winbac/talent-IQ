@@ -7,7 +7,7 @@ function ProblemDescription({
 }) {
   return (
     <div className="h-full overflow-y-auto bg-base-200">
-      {/* Header Section */}
+      {/* HEADER SECTION */}
       <div className="p-6 bg-base-100 border-b border-base-300">
         <div className="flex items-start justify-between mb-3">
           <h1 className="text-3xl font-bold text-base-content">
@@ -15,13 +15,16 @@ function ProblemDescription({
           </h1>
           <span
             className={`badge ${getDifficultyBadgeClass(problem.difficulty)}`}
-          ></span>
+          >
+            {problem.difficulty}
+          </span>
         </div>
         <p className="text-base-content/60">{problem.category}</p>
-        {/* Problem Section */}
+
+        {/* Problem selector */}
         <div className="mt-4">
           <select
-            className="select select-sm-w-full"
+            className="select select-sm w-full"
             value={currentProblemId}
             onChange={(e) => onProblemChange(e.target.value)}
           >
@@ -35,11 +38,12 @@ function ProblemDescription({
       </div>
 
       <div className="p-6 space-y-6">
-        {/* Problem Description */}
+        {/* PROBLEM DESC */}
         <div className="bg-base-100 rounded-xl shadow-sm p-5 border border-base-300">
           <h2 className="text-xl font-bold text-base-content">Description</h2>
+
           <div className="space-y-3 text-base leading-relaxed">
-            <p className="text-base-content/90 ">{problem.description.text}</p>
+            <p className="text-base-content/90">{problem.description.text}</p>
             {problem.description.notes.map((note, idx) => (
               <p key={idx} className="text-base-content/90">
                 {note}
@@ -47,7 +51,8 @@ function ProblemDescription({
             ))}
           </div>
         </div>
-        {/* Example SECTION */}
+
+        {/* EXAMPLES SECTION */}
         <div className="bg-base-100 rounded-xl shadow-sm p-5 border border-base-300">
           <h2 className="text-xl font-bold mb-4 text-base-content">Examples</h2>
           <div className="space-y-4">
