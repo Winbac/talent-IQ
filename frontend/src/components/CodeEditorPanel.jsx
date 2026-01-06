@@ -1,6 +1,6 @@
 import Editor from "@monaco-editor/react";
 import { Loader2Icon, PlayIcon } from "lucide-react";
-import { LANGUAGE_CONFIG } from "../data/problem";
+import { LANGUAGE_CONFIG } from "../data/problems";
 
 function CodeEditorPanel({
   selectedLanguage,
@@ -16,7 +16,7 @@ function CodeEditorPanel({
         <div className="flex items-center gap-3">
           <img
             src={LANGUAGE_CONFIG[selectedLanguage].icon}
-            alt="LANGUAGE_CONFIG[selectedLanguage].name"
+            alt={LANGUAGE_CONFIG[selectedLanguage].name}
             className="size-6"
           />
           <select
@@ -31,6 +31,7 @@ function CodeEditorPanel({
             ))}
           </select>
         </div>
+
         <button
           className="btn btn-primary btn-sm gap-2"
           disabled={isRunning}
@@ -39,16 +40,17 @@ function CodeEditorPanel({
           {isRunning ? (
             <>
               <Loader2Icon className="size-4 animate-spin" />
-              Runnig...
+              Running...
             </>
           ) : (
             <>
               <PlayIcon className="size-4" />
-              Runcode
+              Run Code
             </>
           )}
         </button>
       </div>
+
       <div className="flex-1">
         <Editor
           height={"100%"}
@@ -68,5 +70,4 @@ function CodeEditorPanel({
     </div>
   );
 }
-
 export default CodeEditorPanel;
